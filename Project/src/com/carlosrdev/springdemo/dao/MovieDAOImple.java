@@ -30,7 +30,7 @@ public class MovieDAOImple implements MovieDAO {
 		
 		// execute query and get result list
 		List<Movie> movies = theQuery.getResultList();
-		
+
 		//return the results
 		return movies;
 	}

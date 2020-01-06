@@ -25,7 +25,7 @@ public class MovieController {
 		List<Movie> theMovies = movieDAO.getMovies();
 		
 		//add the movies to the model
-		theModel.addAttribute("movies", theModel);
+		theModel.addAttribute("movies", theMovies); 
 		
 		return "list-movies";
 	}
