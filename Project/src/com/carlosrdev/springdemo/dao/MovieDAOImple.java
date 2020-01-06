@@ -19,7 +19,6 @@ public class MovieDAOImple implements MovieDAO {
 	SessionFactory sessionFactory;
 		
 	@Override
-	@Transactional
 	public List<Movie> getMovies() {
 		// get the current session
 		Session currentSesson = sessionFactory.getCurrentSession();
