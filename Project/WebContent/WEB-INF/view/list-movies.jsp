@@ -21,8 +21,14 @@
 			<h2>Movie Tracker</h2>
 		</div>
 	</div>
+	<br>
   
   	<div id="container">
+  	
+  		<!-- put new button: add movie -->
+  		<input type="button" value="Add Movie"
+  		onclick="window.location.href='showFormForAdd'; return false;"
+  		class="add-button"/>
   	
   		<!-- add our html table here -->
   	

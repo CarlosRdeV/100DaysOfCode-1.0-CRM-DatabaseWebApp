@@ -7,5 +7,7 @@ import com.carlosrdev.springdemo.entity.Movie;
 public interface MovieService {
 
 	public List<Movie> getMovies();
+
+	public void saveMovie(Movie theMovie);
 	
 }

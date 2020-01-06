@@ -34,4 +34,15 @@ public class MovieDAOImple implements MovieDAO {
 		return movies;
 	}
 
+	@Override
+	public void saveMovie(Movie theMovie) {
+		
+		//get the current session
+		Session currenSession = sessionFactory.getCurrentSession();
+
+		//save the movie
+		currenSession.save(theMovie);
+
+	}
+
 }

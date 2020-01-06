@@ -22,4 +22,10 @@ public class MovieServiceImple implements MovieService {
 		return movieDAO.getMovies();
 	}
 
+	@Override
+	@Transactional
+	public void saveMovie(Movie theMovie) {
+		movieDAO.saveMovie(theMovie);
+	}
+
 }
