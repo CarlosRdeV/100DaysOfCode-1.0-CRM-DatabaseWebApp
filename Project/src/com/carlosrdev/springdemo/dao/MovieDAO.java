@@ -12,4 +12,6 @@ public interface MovieDAO {
 
 	public Movie getMovie(int theId);
 
+	public void deleteMovie(int theId);
+
 }

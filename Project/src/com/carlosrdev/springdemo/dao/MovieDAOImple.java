@@ -36,9 +36,12 @@ public class MovieDAOImple implements MovieDAO {
 
 	@Override
 	public void saveMovie(Movie theMovie) {
+		//change name to uppercase
+		theMovie.setName(theMovie.getName().toUpperCase());
 		
 		//get the current session
 		Session currenSession = sessionFactory.getCurrentSession();
+		
 		//save or update the movie
 		currenSession.saveOrUpdate(theMovie);
 
@@ -54,6 +57,23 @@ public class MovieDAOImple implements MovieDAO {
 		Movie theMovie = currentSession.get(Movie.class, theId);
 
 		return theMovie;
+	}
+
+	@Override
+	public void deleteMovie(int theId) {
+		
+		//get the current session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//delete the object with primary key
+		Query theQuery = 
+				currentSession.createQuery("delete from Movie where id=:movieId");
+		
+		theQuery.setParameter("movieId", theId);
+		
+		//execute query
+		theQuery.executeUpdate();
+		
 	}
 
 }
