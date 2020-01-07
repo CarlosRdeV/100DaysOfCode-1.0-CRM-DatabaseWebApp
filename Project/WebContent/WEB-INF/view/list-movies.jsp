@@ -34,7 +34,6 @@
   	
   		<table>
   			<tr>
-  				<th>Id</th>
   				<th>Name</th>
   				<th>Year</th>
   				<th>Rating</th>
@@ -49,14 +48,21 @@
 			<c:param name="movieId" value="${tempMovie.id}"></c:param>
 		</c:url>
 		
-  		 <tr> 
-  		 	<td>${tempMovie.id}</td>
+		<!-- construct an "delete" link with customer id -->
+		<c:url var="deleteLink" value="/movie/delete">
+			<c:param name="movieId" value="${tempMovie.id}"></c:param>
+		</c:url>
+		
+  		 <tr>
   		 	<td>${tempMovie.name}</td>
   		 	<td>${tempMovie.year}</td>
   		 	<td>${tempMovie.rating}</td>
   		 	<td>
   		 		<!-- display the update link -->	
   		 		<a href="${updateLink}">Update</a>
+  		 		|
+  		 		<a href="${deleteLink}" 
+  		 			onclick="if(!(confirm('Are you sure you want to delete this movie?'))) return false">Delete</a>
   		 	
   		 	</td>
   		 </tr>
