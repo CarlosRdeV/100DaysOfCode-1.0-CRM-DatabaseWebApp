@@ -27,7 +27,10 @@
 
 	<div id=container>
 		<form:form action="saveMovie" modelAttribute="movie" method="POST">
-		
+			
+			<!-- need to associate this data with movieId -->
+			<form:hidden path="id"/>
+			
 			<table>
 				<tbody>
 						<tr>

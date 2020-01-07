@@ -39,10 +39,21 @@ public class MovieDAOImple implements MovieDAO {
 		
 		//get the current session
 		Session currenSession = sessionFactory.getCurrentSession();
+		//save or update the movie
+		currenSession.saveOrUpdate(theMovie);
 
-		//save the movie
-		currenSession.save(theMovie);
+	}
 
+	@Override
+	public Movie getMovie(int theId) {
+		
+		//get the current session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		//read from database using primary key
+		Movie theMovie = currentSession.get(Movie.class, theId);
+
+		return theMovie;
 	}
 
 }

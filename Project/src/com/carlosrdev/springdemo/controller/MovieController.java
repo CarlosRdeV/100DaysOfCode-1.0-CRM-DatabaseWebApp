@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.carlosrdev.springdemo.entity.Movie;
 import com.carlosrdev.springdemo.service.MovieService;
@@ -53,6 +54,20 @@ public class MovieController {
 		movieService.saveMovie(theMovie);
 		
 		return "redirect:/movie/list";
+	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String show(@RequestParam("movieId") int theId, 
+						Model theModel) {
+		
+		//get the movie from our service
+		Movie theMovie = movieService.getMovie(theId);
+		
+		//set movie as a model attribute to pre-polute the form
+		theModel.addAttribute("movie",theMovie);
+		
+		//send over to our form	
+		return "movie-form";
 	}
 	
 }

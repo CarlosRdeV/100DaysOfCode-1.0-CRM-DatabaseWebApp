@@ -10,4 +10,6 @@ public interface MovieDAO {
 
 	public void saveMovie(Movie theMovie);
 
+	public Movie getMovie(int theId);
+
 }
