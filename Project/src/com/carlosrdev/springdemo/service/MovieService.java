@@ -11,5 +11,7 @@ public interface MovieService {
 	public void saveMovie(Movie theMovie);
 
 	public Movie getMovie(int theId);
+
+	public void deleteMovie(int theId);
 	
 }

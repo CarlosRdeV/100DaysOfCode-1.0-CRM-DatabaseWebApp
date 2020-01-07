@@ -34,4 +34,10 @@ public class MovieServiceImple implements MovieService {
 		return movieDAO.getMovie(theId);
 	}
 
+	@Override
+	@Transactional
+	public void deleteMovie(int theId) {
+		movieDAO.deleteMovie(theId);
+	}
+
 }
