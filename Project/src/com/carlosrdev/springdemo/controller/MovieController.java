@@ -57,7 +57,7 @@ public class MovieController {
 	}
 	
 	@GetMapping("/showFormForUpdate")
-	public String show(@RequestParam("movieId") int theId, 
+	public String showFormForUpdate(@RequestParam("movieId") int theId, 
 						Model theModel) {
 		
 		//get the movie from our service
@@ -68,6 +68,15 @@ public class MovieController {
 		
 		//send over to our form	
 		return "movie-form";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam("movieId") int theId) {
+		
+		//delete the customer
+		movieService.deleteMovie(theId);
+		
+		return "redirect:/movie/list";
 	}
 	
 }
