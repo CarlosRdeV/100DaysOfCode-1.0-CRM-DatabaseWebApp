@@ -25,8 +25,12 @@ public class MainDemoApp {
 		
 		theAccountDAO.addAccount(myAccount, true);
 		
+		theAccountDAO.doWork();
+		
 		//call the membership bussiness method
 		theMembershipDAO.addAccount();
+		
+		theMembershipDAO.goToSleep();
 		
 		//close context
 		context.close();
