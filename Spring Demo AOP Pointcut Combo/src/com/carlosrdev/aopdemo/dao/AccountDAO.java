@@ -35,7 +35,7 @@ public class AccountDAO {
 	}
 
 	public String getServiceCode() {
-		System.out.println(getClass() + ": int getServiceCode()");
+		System.out.println(getClass() + ": in getServiceCode()");
 		return serviceCode;
 	}
 
