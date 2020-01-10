@@ -27,6 +27,13 @@ public class MainDemoApp {
 		
 		theAccountDAO.doWork();
 		
+		// call the accountDao getter/setter methods
+		theAccountDAO.setName("foobar");
+		theAccountDAO.setServiceCode("silver");
+		
+		theAccountDAO.getName();
+		theAccountDAO.getServiceCode();
+		
 		//call the membership bussiness method
 		theMembershipDAO.addAccount();
 		
