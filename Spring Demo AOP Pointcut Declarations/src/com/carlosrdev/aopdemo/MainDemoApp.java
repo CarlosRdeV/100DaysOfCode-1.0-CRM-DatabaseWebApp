@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.carlosrdev.aopdemo.dao.AccountDAO;
 import com.carlosrdev.aopdemo.dao.MembershipDAO;
 
-public class MainDemoApp {
+public class MainDemoApp {	
 
 	public static void main(String[] args) {
 
