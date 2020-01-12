@@ -21,13 +21,11 @@ public class AfterThrowingDemoApp {
 		
 		//call method to find the accounts
 		try {
-			
-			theAccounts = theAccountDAO.findAccounts();
-			
-		} catch (Exception exc) {
-		
-			System.out.println("\n\nMain Program ... caugh exception: " + exc);
-		
+			boolean tripWire = true;
+			theAccounts = theAccountDAO.findAccounts(tripWire);	
+		} 
+		catch (Exception exc) {
+			System.out.println("\n\nMain Program ... caugh exception: " + exc );
 		}
 		
 		
