@@ -36,7 +36,19 @@ public class MyDemoLoggingAspect {
 		long begin = System.currentTimeMillis();
 		
 		// NOW, LETS EXECUTE THE METHOD
-		Object result = theProceedingJoinPoint.proceed();
+		Object result = null;
+		
+		try {
+			result = theProceedingJoinPoint.proceed();
+		} catch (Exception e) {
+			//log the exception
+			myLogger.warning(e.getMessage());
+			
+			//give user a custom message
+			result = "Major accident! But no worries, "
+					+ "your private AOP helicopter is on the way";
+			
+		}
 		
 		// get end timeslap
 		long end = System.currentTimeMillis();
