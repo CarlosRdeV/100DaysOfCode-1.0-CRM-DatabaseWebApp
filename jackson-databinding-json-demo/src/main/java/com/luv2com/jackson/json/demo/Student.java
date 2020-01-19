@@ -2,6 +2,9 @@ package com.luv2com.jackson.json.demo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
 
 	private int id;
