@@ -30,7 +30,7 @@ public class Driver {
 			
 			//print out languages
 			for(String tempLang : theStudent.getLanguages()) {
-				System.out.println(tempLang);
+				System.out.println(tempLang	);
 			}
 			
 		} catch (Exception e) {
