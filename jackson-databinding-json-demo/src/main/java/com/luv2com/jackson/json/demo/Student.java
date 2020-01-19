@@ -1,11 +1,16 @@
 package com.luv2com.jackson.json.demo;
 
+import java.util.List;
+
 public class Student {
 
 	private int id;
 	private String firstName;
 	private String lastName;
 	private boolean active;
+	private Address address;
+	private List<String> languages;
+	
 	
 	public Student() {
 		
@@ -41,6 +46,22 @@ public class Student {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public List<String> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(List<String> languages) {
+		this.languages = languages;
 	}
 	
 	
