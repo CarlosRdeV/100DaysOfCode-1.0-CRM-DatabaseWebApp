@@ -26,5 +26,14 @@ public class CustomerRestController {
 		return customerService.getCustomers();
 	
 	}
+
+	// add mapping for GET /customers/{customerId}
+	@GetMapping("/customers/{customerId}")
+	public Customer getCustomer(@PathVariable int customerId) {
+		
+		Customer theCustomer = customerService.getCustomer(customerId);
+		
+		return theCustomer;
+	}
 	
 }
